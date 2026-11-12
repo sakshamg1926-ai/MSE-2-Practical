@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily News & Blog Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Daily News & Blog</h1>
+    <p>Your daily dose of information</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('categories')">Categories</button>
+    <button onclick="showPage('trending')">Trending</button>
+    <button onclick="showPage('write')">Write Post</button>
+    <button onclick="showPage('bookmarks')">Bookmarks</button>
+    <button onclick="showPage('about')">About</button>
+</nav>
+
+<div class="container" id="home">
+    <h2>Latest Articles</h2>
+
+    <input type="text" id="search"
+    placeholder="Search articles..."
+    oninput="searchArticles()">
+
+    <div id="homeArticles"></div>
+</div>
+
+<div class="container hidden" id="categories">
+    <h2>Article Categories</h2>
+
+    <button class="category-btn"
+    onclick="filterCategory('Technology')">Technology</button>
+
+    <button class="category-btn"
+    onclick="filterCategory('Sports')">Sports</button>
+
+    <button class="category-btn"
+    onclick="filterCategory('Education')">Education</button>
+
+    <button class="category-btn"
+    onclick="filterCategory('Business')">Business</button>
+
+    <div id="categoryArticles"></div>
+</div>
+
+<div class="container hidden" id="trending">
+    <h2>Trending Articles</h2>
+    <div id="trendingArticles"></div>
+</div>
+
+<div class="container hidden" id="write">
+    <h2>Write a New Article</h2>
+
+    <input type="text" id="title"
+    placeholder="Enter article title">
+
+    <select id="postCategory">
+        <option>Technology</option>
+        <option>Sports</option>
+        <option>Education</option>
+        <option>Business</option>
+    </select>
+
+    <textarea id="content" rows="6"
+    placeholder="Write your article here..."></textarea>
+
+    <button class="submit-btn" onclick="addPost()">
+        Publish Article
+    </button>
+</div>
+
+<div class="container hidden" id="bookmarks">
+    <h2>Saved Articles</h2>
+    <div id="savedArticles"></div>
+</div>
+
+<div class="container hidden" id="about">
+    <h2>About Us</h2>
+
+    <p>
+        Daily News & Blog is an online platform where
+        readers can explore articles related to technology,
+        sports, education and business.
+    </p>
+
+    <p>
+        Users can publish articles, search news,
+        like posts and bookmark their favourite articles.
+    </p>
+</div>
+
+<div class="container hidden" id="articlePage">
+    <button onclick="showPage('home')">Back</button>
+
+    <h2 id="detailTitle"></h2>
+    <p id="detailCategory"></p>
+    <p id="detailTime"></p>
+    <p id="detailContent"></p>
+</div>
+
+<footer>
+    <p>© 2026 Daily News & Blog Portal</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
